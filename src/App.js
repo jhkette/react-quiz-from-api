@@ -11,7 +11,8 @@ class App extends Component {
     questions: [],
     error: null,
     index: 0,
-    score: 0
+    score: 0,
+    submitted: false
   };
 
   async componentDidMount() {
@@ -33,6 +34,8 @@ class App extends Component {
     this.setState({ index: this.state.index + 1 });
   };
 
+ 
+
   render() {
     if (this.state.isLoading === false) {
       return (
@@ -44,6 +47,7 @@ class App extends Component {
             score={this.state.score}
             next={this.nextQuestion}
             index={this.state.index}
+            submitted = {this.state.submitted}
           />
         </div>
       );
