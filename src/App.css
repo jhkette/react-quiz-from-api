@@ -19,6 +19,11 @@
   color: white;
 }
 
+.choice:hover {
+  background-color: #ededed;
+  display: inline-block;
+}
+
 .App-link {
   color: #61dafb;
 }
