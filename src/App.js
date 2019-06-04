@@ -10,7 +10,7 @@ class App extends Component {
     isLoading: true,
     questions: [],
     error: null,
-    index: 0,
+
     score: 0,
     submitted: false
   };
@@ -30,24 +30,18 @@ class App extends Component {
     });
   }
 
-  nextQuestion = () => {
-    this.setState({ index: this.state.index + 1 });
-  };
-
- 
-
   render() {
     if (this.state.isLoading === false) {
       return (
         <div>
           <Header />
           <QuestionBox
-            questions={this.state.questions[this.state.index]}
+            questions={this.state.questions}
             loading={this.state.loading}
             score={this.state.score}
             next={this.nextQuestion}
             index={this.state.index}
-            submitted = {this.state.submitted}
+            submitted={this.state.submitted}
           />
         </div>
       );
