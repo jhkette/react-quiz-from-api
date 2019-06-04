@@ -20,6 +20,15 @@ const formatChoices = choices => {
         return { text: decodeHTML(choice.trim()) }
     })
 }
+const shuffleChoices = choices => {
+    for (let index = choices.length - 1; index > 0; index--) {
+      let index_2 = Math.floor(Math.random() * (index + 1));
+      let temp = choices[index];
+      choices[index] = choices[index_2];
+      choices[index_2] = temp;
+    }
+    return choices;
+  };
 const combineAllChoices = question => question.correct_answer.split(',').concat(question.incorrect_answers)
 
 const formatQuestion = (question, index) => {
@@ -29,7 +38,7 @@ const formatQuestion = (question, index) => {
         type: question.type,
         difficulty: question.difficulty,
         text: decodeHTML(question.question.trim()),
-        choices: formatChoices(combineAllChoices(question)),
+        choices: shuffleChoices(formatChoices(combineAllChoices(question))),
         correct: decodeHTML(question.correct_answer.trim()),
         incorrect: question.incorrect_answers
     }

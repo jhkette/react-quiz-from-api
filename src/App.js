@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Header from "./header";
-import QuestionBox from "./questionBox";
+import QuestionBox from "./components/questionBox";
 import { createQuizData as quizData } from "./api/api";
 
 class App extends Component {
   state = {
     isLoading: true,
     questions: [],
-    error: null,
-
-<<<<<<< HEAD
-=======
-    score: 0,
-    submitted: false
->>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
+    error: null
   };
 
   async componentDidMount() {
@@ -28,8 +21,9 @@ class App extends Component {
   }
 
   setScore() {
+    const score = this.state.score;
     this.setState({
-      score: this.state.score++
+      score: score++
     });
   }
 
@@ -37,18 +31,7 @@ class App extends Component {
     if (this.state.isLoading === false) {
       return (
         <div>
-          <Header />
-          <QuestionBox
-            questions={this.state.questions}
-<<<<<<< HEAD
-=======
-            loading={this.state.loading}
-            score={this.state.score}
-            next={this.nextQuestion}
-            index={this.state.index}
-            submitted={this.state.submitted}
->>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
-          />
+          <QuestionBox questions={this.state.questions} />
         </div>
       );
     } else {
