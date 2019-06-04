@@ -9,19 +9,20 @@ class questionBox extends Component {
       selected: null,
       results: false,
       index: 0,
+      submitted: false
       
     };
    this.questions = props.questions
   }
 
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state !== nextState) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.index !== nextState.index) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   nextQuestion = () => {
     this.setState({ index: this.state.index + 1 });
@@ -78,8 +79,8 @@ class questionBox extends Component {
             </li>
           ))}
         </ul>
-        <button onClick={() => this.nextQuestion()}>next</button>
-        <button onClick={() => this.checkselected()}> Select </button>
+        <button onClick={this.nextQuestion}>next</button>
+        <button onClick={this.checkselected}> Select </button>
 
         <h3> {question.correct} </h3>
       </div>

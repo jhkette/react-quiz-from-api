@@ -11,8 +11,6 @@ class App extends Component {
     questions: [],
     error: null,
 
-    score: 0,
-    submitted: false
   };
 
   async componentDidMount() {
@@ -37,11 +35,6 @@ class App extends Component {
           <Header />
           <QuestionBox
             questions={this.state.questions}
-            loading={this.state.loading}
-            score={this.state.score}
-            next={this.nextQuestion}
-            index={this.state.index}
-            submitted={this.state.submitted}
           />
         </div>
       );
