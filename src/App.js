@@ -11,6 +11,11 @@ class App extends Component {
     questions: [],
     error: null,
 
+<<<<<<< HEAD
+=======
+    score: 0,
+    submitted: false
+>>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
   };
 
   async componentDidMount() {
@@ -35,6 +40,14 @@ class App extends Component {
           <Header />
           <QuestionBox
             questions={this.state.questions}
+<<<<<<< HEAD
+=======
+            loading={this.state.loading}
+            score={this.state.score}
+            next={this.nextQuestion}
+            index={this.state.index}
+            submitted={this.state.submitted}
+>>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
           />
         </div>
       );

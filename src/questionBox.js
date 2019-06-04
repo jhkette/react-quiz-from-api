@@ -9,6 +9,7 @@ class questionBox extends Component {
       selected: null,
       results: false,
       index: 0,
+<<<<<<< HEAD
       submitted: false
       
     };
@@ -24,6 +25,26 @@ class questionBox extends Component {
     }
   }
 
+=======
+      questions: props.questions
+    };
+   
+  }
+
+  // the app method for next question needs to be here - use a constructor to
+  // organise data
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.props.index !== nextProps.index) {
+  //     return true;
+  //   } else if (this.state.results !== nextState.results) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+
+>>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
   nextQuestion = () => {
     this.setState({ index: this.state.index + 1 });
   };
@@ -69,7 +90,11 @@ class questionBox extends Component {
           <center>{question.difficulty}</center>
         </h3>
         <ul>
+<<<<<<< HEAD
           {this.shuffleChoices(question.choices).map((choice, index) => (
+=======
+          {question.choices.map((choice, index) => (
+>>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
             <li
               key={index}
               className="choice"
@@ -79,8 +104,13 @@ class questionBox extends Component {
             </li>
           ))}
         </ul>
+<<<<<<< HEAD
         <button onClick={this.nextQuestion}>next</button>
         <button onClick={this.checkselected}> Select </button>
+=======
+        <button onClick={() => this.nextQuestion()}>next</button>
+        <button onClick={() => this.checkselected()}> Select </button>
+>>>>>>> 23eb5fe64ba1cc9236ffb20cb9a4bc7c81fc031b
 
         <h3> {question.correct} </h3>
       </div>
