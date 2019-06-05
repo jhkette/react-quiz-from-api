@@ -39,7 +39,7 @@ class questionBox extends Component {
 
   nextQuestion = () => {
     if((this.state.index < 9) &&(this.state.submitted === true)){
-    this.setState({ index: this.state.index + 1, submitted: false, selected: null });
+    this.setState({ index: this.state.index + 1, submitted: false, selected: null, selectedid: null });
     }
   };
 
