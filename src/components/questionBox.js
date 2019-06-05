@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+
+
+
 import Header from "./header";
+import QuizCompleted from "./quizCompleted";
 
 class questionBox extends Component {
   constructor(props) {
@@ -8,6 +12,7 @@ class questionBox extends Component {
     this.state = {
       score: 0,
       selected: null,
+      selectedid: null,
       results: false,
       index: 0,
       submitted: false,
@@ -21,14 +26,20 @@ class questionBox extends Component {
       return true;
     } else if (this.state.submitted !== nextState.index) {
       return true;
-    } else {
+    } 
+    else if (this.state.selected !== nextState.selected) {
+      return true;
+    }
+    
+    
+    else {
       return false;
     }
   }
 
   nextQuestion = () => {
-    if((this.state.index < 9) &&(this.state.submitted == true)){
-    this.setState({ index: this.state.index + 1, submitted: false });
+    if((this.state.index < 9) &&(this.state.submitted === true)){
+    this.setState({ index: this.state.index + 1, submitted: false, selected: null });
     }
   };
 
@@ -45,13 +56,17 @@ class questionBox extends Component {
     }
   };
 
-  addselected = choice => {
-    this.setState({ selected: choice });
+  addselected = ({choice, index}) => {
+   
+    this.setState({ selected: choice, selectedid: index });
     console.log(this.state.selected);
   };
 
   render() {
     const question = this.questions[this.state.index];
+    const listItem = "listitem";
+   
+    
     
       if (this.state.index !== 9){
         return (
@@ -70,10 +85,11 @@ class questionBox extends Component {
           {question.choices.map((choice, index) => (
             <li
               key={index}
-              className="choice"
-              onClick={() => this.addselected(choice.text)}
+              className={this.state.selectedid== index ? 'selected': null}
+              onClick={() => this.addselected({choice: choice.text, index: index
+              })}
             >
-              {choice.text}
+             {index +1} {choice.text} 
             </li>
           ))}
         </ul>
@@ -90,7 +106,7 @@ class questionBox extends Component {
         }
         else{
           return (
-            <h1>Quiz completed</h1>
+            <QuizCompleted score ={this.state.score}/>
           )
         }
   }

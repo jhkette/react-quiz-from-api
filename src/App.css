@@ -19,13 +19,34 @@
   color: white;
 }
 
-.choice:hover {
+.choices:hover {
   background-color: #ededed;
   display: inline-block;
 }
 
+.selected {
+  background-color: blue;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.listitem0index.highlight {
+  background-color: #16b681
+}
+.listitem1index.highlight {
+  background-color: #16b681
+}
+.listitem2index.highlight {
+  background-color: #16b681
+}
+.listitem3index.highlight {
+  background-color: #16b681
+}
+
+.list.nohighlight {
+  background-color: #ededed;
 }
 
 @keyframes App-logo-spin {

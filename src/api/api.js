@@ -29,6 +29,8 @@ const shuffleChoices = choices => {
     }
     return choices;
   };
+
+  
 const combineAllChoices = question => question.correct_answer.split(',').concat(question.incorrect_answers)
 
 const formatQuestion = (question, index) => {

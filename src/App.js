@@ -20,13 +20,6 @@ class App extends Component {
     }
   }
 
-  setScore() {
-    const score = this.state.score;
-    this.setState({
-      score: score++
-    });
-  }
-
   render() {
     if (this.state.isLoading === false) {
       return (
