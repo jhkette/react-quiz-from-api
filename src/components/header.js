@@ -8,6 +8,6 @@ const header = props => {
       <p>Score: {props.score}/10</p>
     </div>
   );
-};
+ };
 
 export default header;
