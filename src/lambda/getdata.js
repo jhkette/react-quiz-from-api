@@ -6,16 +6,15 @@ exports.handler  = function(event, context, callback){
 
     // send repsonse
     const send = body => {
-        callback(null,{
+        callback(null, {
             statusCode: 200,
-            headers:{
+            headers: {
               'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Headers': 'Origin, X-requested-With, Content-Type Accept'
-
+              'Access-Control-Allow-Headers':
+                'Origin, X-Requested-With, Content-Type, Accept'
             },
             body: JSON.stringify(body)
-
-        });
+          });
     }
 
     const getusers = ()=> {
