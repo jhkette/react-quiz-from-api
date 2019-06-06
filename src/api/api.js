@@ -2,7 +2,11 @@ import axios from 'axios'
 
 const getQuestionsFromAPI = async () => {
     try {
-        const response = await axios.get('https://opentdb.com/api.php?amount=10')
+        const response = await axios.get('https://opentdb.com/api.php?amount=10' , {
+            method: 'GET',
+            'Access-Control-Allow-Origin': '*', //include, same-origin
+            headers: {Accept: 'application/json', 'Content-Type': 'application/json',},
+        })
         return response.data.results
     } catch (err) {
         console.log(err)
