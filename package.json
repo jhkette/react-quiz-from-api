@@ -13,10 +13,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start:lambda": "netlify-lambda serve src/lambda",
+    "build": "run-p build:**",
+    "build:app": "react-scripts build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lambda": "netlify-lambda serve src/lambda"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
