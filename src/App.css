@@ -24,25 +24,25 @@
   display: inline-block;
 }
 
-.selected {
+.choice.selected {
   background-color: blue;
+}
+.list-questions{
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+
+
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.listitem0index.highlight {
-  background-color: #16b681
-}
-.listitem1index.highlight {
-  background-color: #16b681
-}
-.listitem2index.highlight {
-  background-color: #16b681
-}
-.listitem3index.highlight {
-  background-color: #16b681
+.choice{
+  display: inline-block;
+  
+  width: auto;
 }
 
 .list.nohighlight {

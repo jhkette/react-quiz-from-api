@@ -17,14 +17,14 @@ exports.handler  = function(event, context, callback){
           });
     }
 
-    const getusers = ()=> {
+    const getdata = ()=> {
         axios.get(url)
         .then(res => send(res.data))
         .catch(err => send(err))
     }
 
     if(event.httpMethod == 'GET'){
-        getusers();
+        getdata();
     }
     
 }

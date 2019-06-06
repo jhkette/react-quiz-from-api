@@ -64,10 +64,7 @@ class questionBox extends Component {
 
   render() {
     const question = this.questions[this.state.index];
-    const listItem = "listitem";
-   
-    
-    
+     
       if (this.state.index !== 9){
         return (
       <div className="questions">
@@ -81,11 +78,11 @@ class questionBox extends Component {
         <h3>
           <center>{question.difficulty}</center>
         </h3>
-        <ul>
+        <ul className="list-questions">
           {question.choices.map((choice, index) => (
             <li
               key={index}
-              className={this.state.selectedid== index ? 'selected': null}
+              className= {`choice  ${this.state.selectedid===index ? 'selected': ''} `}
               onClick={() => this.addselected({choice: choice.text, index: index
               })}
             >
