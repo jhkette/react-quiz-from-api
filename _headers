@@ -1,0 +1,4 @@
+/src/index.html
+   X-Frame-Options: DENY
+   X-XSS-Protection: 1; mode=block
+   Access-Control-Allow-Origin: *
